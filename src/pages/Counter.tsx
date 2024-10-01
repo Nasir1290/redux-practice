@@ -8,10 +8,10 @@ const Counter = () => {
                     0
                 </h1>
 
-                <div className=" flex gap-5 flex-wrap">
-                    <button className=" px-4 shadow font-bold py-2 bg-red-500 text-white rounded-lg text-sm">Reset</button>
-                    <button className=" px-4 shadow font-bold tracking-wide py-2 bg-orange-500 text-white rounded-lg text-sm">Decreament</button>
-                    <button className=" px-4 shadow font-bold tracking-wide py-2 bg-green-600 text-white rounded-lg text-sm">Increament</button>
+                <div className=" grid grid-cols-2 md:grid-cols-3 gap-5 justify-center">
+                    <button className=" col-span-1  px-4 shadow font-bold py-2 bg-red-500 text-white rounded-lg text-sm">Reset</button>
+                    <button className=" col-span-1 w-full px-4 shadow font-bold tracking-wide py-2 bg-orange-500 text-white rounded-lg text-sm">Decreament</button>
+                    <button className=" col-span-1 w-full px-4 shadow font-bold tracking-wide py-2 bg-green-600 text-white rounded-lg text-sm">Increament</button>
                 </div>
             </div>
         </div>
