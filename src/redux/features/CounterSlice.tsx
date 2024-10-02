@@ -1,11 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
+type TInitialValue = {
+    count: number
+}
+
+const initialState: TInitialValue = {
     count: 0
 }
 
-export const conterSlice = createSlice({
+const counterSlice = createSlice({
     name: "counter",
     initialState,
-    reducers: {}
+    reducers: {
+        increment: (state) => {
+
+            state.count++;
+        },
+        decrement: (state) => {
+            if (state.count === 0) {
+                alert("value can't be negative")
+                return;
+            }
+            state.count--;
+        },
+        reset: (state) => {
+            state.count = 0;
+        },
+        addByValue: (state, action: PayloadAction<{ value: number }>) => {
+            state.count = state.count + action.payload.value
+        },
+    }
 })
+
+
+export const { increment, decrement, reset, addByValue } = counterSlice.actions;
+export default counterSlice.reducer;
