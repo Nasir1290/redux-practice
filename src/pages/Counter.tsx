@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addByValue, decrement, increment, reset } from "../redux/features/CounterSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { AppDispatch, RootState } from "../redux/store";
+import { Button } from "@/components/ui/button";
 
 const Counter = () => {
     const { count } = useAppSelector((state: RootState) => state.counter)
@@ -42,6 +43,7 @@ const Counter = () => {
                             dispatch(addByValue({ value: valueToAdd }))
                         }}
                     >Add Value</button>
+                    <Button>Increase</Button>
                 </div>
             </div>
         </div>
